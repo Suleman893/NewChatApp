@@ -14,7 +14,6 @@ const createChat = async (req, res) => {
     });
 
     const response = await newChat.save();
-
     res.status(200).json(response);
   } catch (err) {
     console.log("The error", err);
@@ -23,7 +22,7 @@ const createChat = async (req, res) => {
 };
 
 const findUserChats = async (req, res) => {
-  const userId = req.params.userId;
+  const userId = req.params.userId; 
 
   try {
     const chats = await chatModel.find({
